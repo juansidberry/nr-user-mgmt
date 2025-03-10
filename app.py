@@ -180,7 +180,8 @@ def main():
             choice = input(f"\n\tDo you want to continue? (y/N): ").strip().lower()
             if choice == 'y':
                 # actually removes users from New Relic
-                remove_users_from_new_relic(user_remove_list, new_relic_users)
+                # remove_users_from_new_relic(user_remove_list, new_relic_users)
+                pass
             elif choice == 'n' or choice == '':
                 print("You chose to exit.")
                 break
