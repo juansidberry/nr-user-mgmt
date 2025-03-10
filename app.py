@@ -172,23 +172,24 @@ def main():
     # creats a list of users to be deleted from New Relic based on list in Entra ID
     user_remove_list = create_user_remove_list(azure_user_list, new_relic_users)
 
-    if user_remove_list:
-        print(f"\n\tThese are the users who will be removed from New Relic:\n")
-        for nr_user_name in user_remove_list:
-            print(f"\t\t{nr_user_name}")
-        while True:
-            choice = input(f"\n\tDo you want to continue? (y/N): ").strip().lower()
-            if choice == 'y':
-                # actually removes users from New Relic
-                # remove_users_from_new_relic(user_remove_list, new_relic_users)
-                pass
-            elif choice == 'n' or choice == '':
-                print("You chose to exit.")
-                break
-            else:
-                print("Invalid input. Please enter 'y' to continue or 'N' to exit.")
-    else:
-        print(f"\n\tThere are no users to remove\n")
+    print(user_remove_list)
+
+    # if user_remove_list:
+    #     print(f"\n\tThese are the users who will be removed from New Relic:\n")
+    #     for nr_user_name in user_remove_list:
+    #         print(f"\t\t{nr_user_name}")
+    #     while True:
+    #         choice = input(f"\n\tDo you want to continue? (y/N): ").strip().lower()
+    #         if choice == 'y':
+    #             # actually removes users from New Relic
+    #             remove_users_from_new_relic(user_remove_list, new_relic_users)
+    #         elif choice == 'n' or choice == '':
+    #             print("You chose to exit.")
+    #             break
+    #         else:
+    #             print("Invalid input. Please enter 'y' to continue or 'N' to exit.")
+    # else:
+    #     print(f"\n\tThere are no users to remove\n")
 
 
 if __name__ == '__main__':
