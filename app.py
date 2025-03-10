@@ -12,10 +12,11 @@ import json
 akv_url = 'https://sandbox-eus-kv-sre-001.vault.azure.net/'
 credential = DefaultAzureCredential()
 akv_client = SecretClient(vault_url=akv_url, credential=credential)
-nr_sso_group_id = akv_client.get_secret("new-relic-sso-group-id")
-api_key = akv_client.get_secret("newrelic-license-key")
+# nr_sso_group_id = akv_client.get_secret("new-relic-sso-group-id")
+nr_sso_group_id = os.getenv("NR_GROUP_ID")
+# api_key = akv_client.get_secret("newrelic-license-key")
 
-# api_key = os.getenv('NR_API_KEY')
+api_key = os.getenv('NR_API_KEY')
 
 do_not_delete = ["thielman@sggtech.com","test.user1@insightglobal.com","newrelic.svc@insightglobal.com"]
 
